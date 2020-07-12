@@ -6,7 +6,7 @@ function validate() {
     var gender = document.getElementById("Gender");
     var option = document.getElementsByClassName("option");
 
-    if (!Name.value || Name.length > 12 ) {
+    if (!Name.value) {
         Name.style.border = "2px solid red";
         return false;
     }
@@ -22,9 +22,17 @@ function validate() {
         PswRepeat.style.border = "2px solid red";
         return false;
     }
-    if (option != "Male" || option.value != "Female" ) {
+    if ((option.value != "Male") || (option.value != "Female") ) {
         option.style.border = "2px solid red";
        return false;
     }
     return true;
+}
+
+function validateName(){
+	var x = document.forms["commentform"]["Name"].value;
+	if (x.length < 3) {
+		document.getElementById('au').innerHTML = '(мин. 3 символа)';
+		return false;
+    }
 }

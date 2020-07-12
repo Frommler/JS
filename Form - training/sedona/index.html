@@ -9,11 +9,11 @@
 </head>
 <body>
     <section>
-        <form action="action_page.php" onsubmit="return validate()">
+        <form action="action_page.php"  name="commentform" id="commentform">
             <div class="container">
               <h1>Sign up</h1>
               <label for="name"><b>Username</b></label>
-              <input type="text" placeholder=" Enter Name" id="name">
+              <input type="text" placeholder=" Enter Name" id="name" onblur="return validateName()">
               <label for="email"><b>Email</b></label>
               <input type="text" placeholder=" Enter Email" id="email">
               <label for="password"><b>Password</b></label>
@@ -22,13 +22,13 @@
               <input type="password" placeholder=" Repeat Password" id="psw-repeat">
               <label for="Gender"><b>Gender</b></label>
               <select class="btn" size="1" id="Gender">
-                    <option class="option"></option>
+                    <option></option>
                     <option value="Male" class="option">Male</option>
                     <option value="Female" class="option">Female</option>
               </select>
               <div class="bottom">
                     <input class="checkbox" type="checkbox" id="checkbox"><label for="checkbox">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</label>
-                    <button class="btn registerbtn" type="submit">Let`s GO!</button>
+                    <button class="btn registerbtn" type="submit" onclick="return validate()">Let`s GO!</button>
                     <div class="login">Already have an account? <a href="#">Login</a>.</div>
               </div>
             </div>
