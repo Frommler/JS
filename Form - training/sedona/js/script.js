@@ -1,24 +1,30 @@
 function validate() {
-    var userName = document.getElementById("name");
-    var userEmail = document.getElementById("email");
-    var userPassword = document.getElementById("password");
-    var userPswRepeat = document.getElementById("psw-repeat");
+    var Name = document.getElementById("name");
+    var Email = document.getElementById("email");
+    var Password = document.getElementById("password");
+    var PswRepeat = document.getElementById("psw-repeat");
+    var gender = document.getElementById("Gender");
+    var option = document.getElementsByClassName("option");
 
-    if (!userName.value) {
-        userName.style.border = "2px solid red";
+    if (!Name.value || Name.length > 12 ) {
+        Name.style.border = "2px solid red";
         return false;
     }
-    if (!userEmail.value) {
-        userEmail.style.border = "2px solid red";
+    if (!Email.value) {
+        Email.style.border = "2px solid red";
         return false;
     }
-    if (!userPassword.value) {
-        userPassword.style.border = "2px solid red";
+    if (!Password.value) {
+        Password.style.border = "2px solid red";
         return false;
     }
-    if (!userPswRepeat.value) {
-        userPswRepeat.style.border = "2px solid red";
+    if (!PswRepeat.value) {
+        PswRepeat.style.border = "2px solid red";
         return false;
+    }
+    if (option != "Male" || option.value != "Female" ) {
+        option.style.border = "2px solid red";
+       return false;
     }
     return true;
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
     <section>
-        <form action="action_page.php">
+        <form action="action_page.php" onsubmit="return validate()">
             <div class="container">
               <h1>Sign up</h1>
               <label for="name"><b>Username</b></label>
@@ -22,19 +22,19 @@
               <input type="password" placeholder=" Repeat Password" id="psw-repeat">
               <label for="Gender"><b>Gender</b></label>
               <select class="btn" size="1" id="Gender">
-                    <option value="None">None</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option class="option"></option>
+                    <option value="Male" class="option">Male</option>
+                    <option value="Female" class="option">Female</option>
               </select>
               <div class="bottom">
                     <input class="checkbox" type="checkbox" id="checkbox"><label for="checkbox">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</label>
-                    <button  class="btn registerbtn" type="submit">Let`s GO!</button>
+                    <button class="btn registerbtn" type="submit">Let`s GO!</button>
                     <div class="login">Already have an account? <a href="#">Login</a>.</div>
               </div>
             </div>
           </form>
     </section>
-    <script src="/js/script.js">
+    <script src="js/script.js">
     </script>
 </body>
 </html>
