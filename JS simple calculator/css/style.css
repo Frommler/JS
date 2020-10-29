@@ -1,0 +1,42 @@
+.body {
+  border: 1px solid black;
+  width: 250px;
+  margin:  150px auto ;
+}
+
+.textField {
+  border: 2px solid black;
+  height: 25px;
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 22px;
+  text-align: right;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.btn {
+  border: 1px solid black;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 5px;
+}
+
+.btn:hover {
+  background-color: brown;
+}
+
+.btns-numbers {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.btns-operators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
