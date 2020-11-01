@@ -1,5 +1,8 @@
 let numbers = document.getElementsByClassName('numbers'),
-    operand;
+    value = document.getElementById("textField").value,
+    Result = document.getElementById("btnResult");
+
+
 for(let i=0; i<numbers.length; i++){
     let singleNumber = numbers[i];
     singleNumber.onclick = function(){
@@ -7,21 +10,30 @@ for(let i=0; i<numbers.length; i++){
     };
 };
 
+document.getElementById("btnPlus").onclick = function(e) {
+  document.getElementById("textField").value = document.getElementById("textField").value + "+";
+};
+
+document.getElementById("btnMinus").onclick = function(e) {
+  document.getElementById("textField").value = document.getElementById("textField").value + "-";
+};
+
+document.getElementById("btnDevide").onclick = function(e) {
+  document.getElementById("textField").value = document.getElementById("textField").value + "/";
+};
+
+document.getElementById("btnMultiple").onclick = function(e) {
+  document.getElementById("textField").value = document.getElementById("textField").value + "*";
+};
+
+document.getElementById("btnDot").onclick = function(e) {
+  document.getElementById("textField").value = document.getElementById("textField").value + ".";
+};
+
 document.getElementById("btnC").onclick = function clearField(e) {
   document.getElementById("textField").value = "";
 };
 
-document.getElementById("btnPlus").onclick = function(e) {
-  operand = document.getElementById("textField").value;
-  clearField;
+Result.onclick = function() {
+  textField.value = eval(textField.value);
 };
-
-
-
-
-/*
-let result = {
-  currentResult:0,
-  currentOperationType:0,
-  newOperand:0
-}*/
