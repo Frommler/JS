@@ -105,10 +105,25 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden";
   });
 
-  modalCloseBtn.addEventListener("click", () => {
+  function closeModal() {
     modal.classList.add("hide");
     modal.classList.remove("show");
     document.body.style.overflow = "";
+  }
+
+  modalCloseBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
   });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.code ==='Escape') {
+      closeModal();
+    }
+  });
+
   //end Modal
 });
