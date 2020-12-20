@@ -95,14 +95,19 @@ window.addEventListener("DOMContentLoaded", () => {
   //end Timer
 
   //Modal
-  const modalTrigger = document.querySelector("[ data-modal]"),
+  const modalTrigger = document.querySelectorAll("[ data-modal]"),
     modal = document.querySelector(".modal"),
     modalCloseBtn = document.querySelector("[data-close]");
 
-  modalTrigger.addEventListener("click", () => {
+  function openModal() {
     modal.classList.add("show");
     modal.classList.remove("hide");
     document.body.style.overflow = "hidden";
+    clearInterval(modalTimerId);
+  }
+
+  modalTrigger.forEach((btn) => {
+    btn.addEventListener("click", openModal);
   });
 
   function closeModal() {
@@ -119,10 +124,16 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.code ==='Escape') {
+  document.addEventListener("keydown", (e) => {
+    if (e.code === "Escape") {
       closeModal();
     }
+  });
+
+  const modalTimerId = setTimeout(openModal, 5000);
+
+  window.addEventListener('scroll', () => {
+    
   });
 
   //end Modal
